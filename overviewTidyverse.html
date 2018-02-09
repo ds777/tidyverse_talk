@@ -160,14 +160,6 @@ $(document).ready(function () {
 <p><code>install.packages(tidyverse)</code> installs all of the above packages.</p>
 <p><code>library(tidyverse)</code> attaches only the core packages.</p>
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ──────────────────────── tidyverse 1.2.1 ──</code></pre>
-<pre><code>## ✔ ggplot2 2.2.1.9000     ✔ purrr   0.2.4     
-## ✔ tibble  1.4.2          ✔ dplyr   0.7.4     
-## ✔ tidyr   0.7.2          ✔ stringr 1.2.0     
-## ✔ readr   1.1.1          ✔ forcats 0.2.0</code></pre>
-<pre><code>## ── Conflicts ─────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 </div>
 </div>
 <div id="tibble" class="section level2">
@@ -179,18 +171,18 @@ class(tdf)</code></pre>
 <p>Tibbles print politely.</p>
 <pre class="r"><code>tdf</code></pre>
 <pre><code>## # A tibble: 10,000 x 2
-##        x      y
-##    &lt;int&gt;  &lt;dbl&gt;
-##  1     1 -0.537
-##  2     2  0.395
-##  3     3 -0.177
-##  4     4 -2.19 
-##  5     5  0.249
-##  6     6  0.816
-##  7     7 -0.108
-##  8     8 -0.482
-##  9     9 -0.225
-## 10    10  2.86 
+##        x       y
+##    &lt;int&gt;   &lt;dbl&gt;
+##  1     1  0.164 
+##  2     2 -1.97  
+##  3     3  1.70  
+##  4     4 -1.64  
+##  5     5 -1.66  
+##  6     6 -2.87  
+##  7     7 -0.283 
+##  8     8 -0.0434
+##  9     9  0.218 
+## 10    10  1.77  
 ## # ... with 9,990 more rows</code></pre>
 <ul>
 <li><p>Can customize print methods with <code>print(tdf, n = rows, width = cols)</code></p></li>
@@ -205,8 +197,9 @@ class(tdf)</code></pre>
 <div id="the-pipe-functional-composition" class="section level2">
 <h2>The pipe <code>%&gt;%</code> : Functional composition</h2>
 <p>Sends the output of the LHS function to the first argument of the RHS function.</p>
-<pre class="r"><code>sum(1:8) %&gt;% 
-  sqrt()</code></pre>
+<pre class="r"><code>piping &lt;- sum(1:8) %&gt;% 
+          sqrt()
+piping</code></pre>
 <pre><code>## [1] 6</code></pre>
 <p>Note that keyboard shortcut for the pipe is <code>cmd + shift + M</code></p>
 </div>

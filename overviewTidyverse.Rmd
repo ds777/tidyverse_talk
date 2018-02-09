@@ -1,17 +1,17 @@
 ---
 title: "An Overview of the Tidyverse"
 output:
+  html_notebook: default
   pdf_document: default
   word_document: default
   html_document: default
-  html_notebook: default
   github_document: default
 ---
 
 
 This document is based on the Michael Levy's presentation at the Davis R-Users' Group. 
 
-- The youtube video of the presentation is available [here.](https://www.youtube.com/watch?v=_rPhSAVhs1A) 
+- The YouTube video of the presentation is available [here.](https://www.youtube.com/watch?v=_rPhSAVhs1A) 
 - The original github repository of the presentation is [here.](https://github.com/michaellevy/tidyverse_talk)
 
 ## What is the tidyverse?
@@ -48,13 +48,15 @@ Suite of ~20 packages that provide consistent, user-friendly, smart-default tool
 
 `library(tidyverse)` attaches only the core packages.
 
-```{r Attach core packages, echo=TRUE}
+**Be careful:** When loading the `tidyverse` library be sure to add `message=FALSE` in the chunk options. If this option is not added, pandoc will return an [error](https://community.rstudio.com/t/tidyverse-1-2-1-knitting-to-pdf-issue/2880/8) and a PDF file will not be generated
+
+```{r Attach core packages, echo=TRUE, message=FALSE}
 library(tidyverse)
 ```
 
 ## tibble
 
-A modern reimagining of a data frame.
+A modern re-imagining of a data frame.
 
 ```{r class tbl}
 tdf <- tibble(x = 1:1e4, y = rnorm(1e4))
@@ -74,7 +76,7 @@ tdf
 
 Tibbles have some convenient and consistent defaults that are different from base R data.frames. 
 
-- In tibbles strings are NOT automatically reconized as factors
+- In tibbles strings are NOT automatically recognized as factors
 
 Also note that tidyverse import functions, such as `readr::read_csv`, default to tibbles and that *this can break existing code*.
 
@@ -82,9 +84,10 @@ Also note that tidyverse import functions, such as `readr::read_csv`, default to
 
 Sends the output of the LHS function to the first argument of the RHS function.
 
-```{r pipe, echo=TRUE}
-sum(1:8) %>% 
-  sqrt()
+```{r pipe}
+piping <- sum(1:8) %>% 
+          sqrt()
+piping
 ```
 
 Note that keyboard shortcut for the pipe is `cmd + shift + M`
