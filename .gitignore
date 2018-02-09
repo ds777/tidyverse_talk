@@ -1,3 +1,4 @@
 *.csv
 tidyverse_cache/
 .DS_Store
+.Rproj.user
