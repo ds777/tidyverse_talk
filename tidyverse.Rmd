@@ -1,30 +1,27 @@
 ---
-title: "tidyverse"
-author: "Michael Levy, Prepared for the Davis R-Users' Group"
+title: "An Overview of the Tidyverse"
 date: "October 13, 2016"
 output:
-  github_document: default
   html_notebook: default
+  github_document: default
 ---
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(cache = TRUE, error = TRUE, fig.width = 4, fig.asp = 1)
 ```
-
+This document is based on the Michael Levy's presentation at the Davis R-Users' Group,
 
 ## What is the tidyverse?
 
-~~Hadleyverse~~
-
-The tidyverse is a suite of R tools that follow a tidy philosophy:
+A a suite of R tools that follow a tidy philosophy:
 
 ### Tidy data
 
 Put data in data frames  
 
-- Each type of observation gets a data frame
 - Each variable gets a column
 - Each observation gets a row
+- Each unit of analysis gets a data frame
 
 ### Tidy APIs
 
@@ -77,6 +74,7 @@ library(tidyverse)
 tdf = tibble(x = 1:1e4, y = rnorm(1e4))  # == data_frame(x = 1:1e4, y = rnorm(1e4))
 class(tdf)
 ```
+
 
 
 Tibbles print politely. 
